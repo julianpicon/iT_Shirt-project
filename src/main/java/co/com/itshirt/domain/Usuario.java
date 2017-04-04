@@ -43,9 +43,12 @@ public class Usuario {
 	@Column(name = "usua_direccion")
 	private String direccion;
 	
+	@Column(name = "usua_estado")
+	private String estado;
+	
 	@ManyToOne(fetch = FetchType.EAGER, optional = false)
-    @JoinColumn(name = "rol_id")
-    private Rol rol;
+    	@JoinColumn(name = "rol_id")
+    	private Rol rol;
 	
 	@Transient
 	private String passwordConfirm; //TODO Es temporal.
@@ -174,5 +177,14 @@ public class Usuario {
 	public void setDireccion(String direccion) {
 		this.direccion = direccion;
 	}
+	
+	public String getEstado() {
+		return estado;
+	}
+
+	public void setEstado(String estado) {
+		this.estado = estado;
+	}
+	
 	
 }
