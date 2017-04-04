@@ -108,6 +108,8 @@ public class UserController {
          usuario.setGenero("M");
          usuario.setEstado("A");
          usuario.setRol(this.rolRepository.findBySigla("ADMIN"));
+	 System.out.println(usuario);
+	 this.userRepository.save(usuario);
          this.securityService.autologin("admin", "admin");
          return "redirect:/welcome";
     }
